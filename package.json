@@ -1,0 +1,21 @@
+{
+  "name": "ai-playwright-enterprise-automation-framework",
+  "version": "1.0.0",
+  "description": "Enterprise-grade Playwright automation framework built with TypeScript.",
+  "author": "LaTanya Jenkins",
+  "license": "MIT",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf reports test-results"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.0",
+    "typescript": "^5.9.2"
+  }
+}
