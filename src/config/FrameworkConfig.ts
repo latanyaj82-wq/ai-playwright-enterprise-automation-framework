@@ -1,13 +1,17 @@
-//FrameworkConfig
+export interface FrameworkConfig {
+    environment: string;
 
-//environment
+    baseUrl: string;
 
-//baseUrl
+    browser: string;
 
-//browser
+    headless: boolean;
 
-//headless
+    retryCount: number;
 
-//retryCount
-
-//timeouts
+    timeouts: {
+        short: number;
+        medium: number;
+        long: number;
+    };
+}
