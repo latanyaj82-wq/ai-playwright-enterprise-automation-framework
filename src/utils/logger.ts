@@ -20,4 +20,5 @@ export class Logger {
     public static debug(message: string): void {
         console.log(`[${this.timestamp()}] [DEBUG] ${message}`);
     }
+
 }
