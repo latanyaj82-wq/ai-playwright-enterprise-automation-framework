@@ -3,6 +3,8 @@ Support, multiple environments, Centralize configuration management */
 
 import { FrameworkConfig } from './FrameworkConfig';
 import { EnvironmentLoader } from './EnvironmentLoader';
+import { BrowserConstants } from '../constants/BrowserConstants';
+import { EnvironmentConstants } from '../constants/EnvirnomentConstants';
 
 
 export class ConfigManager {
@@ -27,11 +29,11 @@ export class ConfigManager {
      */
     private loadConfiguration(): FrameworkConfig {
         return {
-            environment: 'dev',
+            environment: EnvironmentConstants.DEV,
 
             baseUrl: 'https://opensource-demo.orangehrmlive.com',
 
-            browser: 'chromium',
+            browser:BrowserConstants.CHROMIUM,
 
             headless: false,
 
