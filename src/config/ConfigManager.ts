@@ -2,6 +2,10 @@
 Support, multiple environments, Centralize configuration management */
 
 import { FrameworkConfig } from './FrameworkConfig';
+import dotenv from 'dotenv';
+import { FrameworkConfig } from './FrameworkConfig';
+
+dotenv.config();
 
 
 export class ConfigManager {
