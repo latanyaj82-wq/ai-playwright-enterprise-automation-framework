@@ -1,6 +1,8 @@
-
+import { Logger } from '../utils/logger';
 
 export class FrameworkConstants {
+
+    public static readonly logger = new Logger();
 
     public static readonly DEFAULT_RETRY_COUNT = 1;
 

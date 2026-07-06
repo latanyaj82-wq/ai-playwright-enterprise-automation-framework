@@ -1,6 +1,7 @@
 /* Initialize shared framework services, Ensure services are created only once, Prepare the framework before test execution, Provide a single bootstrap entry point. */
 
-import { ConfigManager } from '../config/configManager';
+import { ConfigManager } from '../config/ConfigManager';
+import { Logger } from '../utils/logger';
 
 export class FrameworkInitializer {
     private configManager: ConfigManager;
@@ -23,13 +24,13 @@ export class FrameworkInitializer {
     public initialize(): void {
 
     console.log('========================================');
-    console.log('Enterprise Framework Initializing...');
+Logger.info('Enterprise Framework Initializing...');
     console.log('========================================');
 
     // Get the loaded configuration
     const config = this.configManager.getConfiguration();
 
-    console.log('Configuration Manager initialized successfully.');
+Logger.info('Configuration Manager initialized successfully.');
 
     console.log('');
     console.log('Active Configuration');
@@ -47,7 +48,7 @@ export class FrameworkInitializer {
     console.log(`Long   : ${config.timeouts.long} ms`);
     console.log('');
 
-    console.log('Framework initialization complete.');
+Logger.info('Framework initialization complete.');
+
 }
-    
 }
