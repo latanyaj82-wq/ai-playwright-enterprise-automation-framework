@@ -5,6 +5,7 @@ import { FrameworkConfig } from './FrameworkConfig';
 import { EnvironmentLoader } from './EnvironmentLoader';
 import { BrowserConstants } from '../constants/BrowserConstants';
 import { EnvironmentConstants } from '../constants/EnvirnomentConstants';
+import { TimeoutConstants } from '../constants/TimeoutConstants';
 
 
 export class ConfigManager {
@@ -40,9 +41,9 @@ export class ConfigManager {
             retryCount: 1,
 
             timeouts: {
-                short: 3000,
-                medium: 10000,
-                long: 30000
+                short: TimeoutConstants.SHORT,
+                medium: TimeoutConstants.MEDIUM,
+                long: TimeoutConstants.LONG
             }
         };
     }
