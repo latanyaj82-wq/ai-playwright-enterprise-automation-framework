@@ -11,7 +11,11 @@
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
     "typecheck": "tsc --noEmit",
-    "clean": "rm -rf reports test-results"
+    "clean": "rm -rf reports test-results",
+    "test:dev": "TEST_ENV=dev npx playwright test",
+    "test:qa": "TEST_ENV=qa npx playwright test",
+    "test:uat": "TEST_ENV=uat npx playwright test",
+    "test:prod": "TEST_ENV=prod npx playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.1",

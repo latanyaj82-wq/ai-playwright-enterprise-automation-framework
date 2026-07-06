@@ -21,15 +21,33 @@ export class FrameworkInitializer {
      * Additional services will be added here as the framework grows.
      */
     public initialize(): void {
-        console.log('====================================');
-        console.log('Enterprise Framework Initializing...');
-        console.log('====================================');
 
-        // Configuration Manager has already been initialized
-        // by the constructor.
+    console.log('========================================');
+    console.log('Enterprise Framework Initializing...');
+    console.log('========================================');
 
-        console.log('Configuration Manager initialized successfully.');
+    // Get the loaded configuration
+    const config = this.configManager.getConfiguration();
 
-        console.log('Framework initialization complete.');
-    }
+    console.log('Configuration Manager initialized successfully.');
+
+    console.log('');
+    console.log('Active Configuration');
+    console.log('----------------------------------------');
+    console.log(`Environment : ${config.environment}`);
+    console.log(`Base URL    : ${config.baseUrl}`);
+    console.log(`Browser     : ${config.browser}`);
+    console.log(`Headless    : ${config.headless}`);
+    console.log(`Retry Count : ${config.retryCount}`);
+    console.log('');
+    console.log('Timeouts');
+    console.log('----------------------------------------');
+    console.log(`Short  : ${config.timeouts.short} ms`);
+    console.log(`Medium : ${config.timeouts.medium} ms`);
+    console.log(`Long   : ${config.timeouts.long} ms`);
+    console.log('');
+
+    console.log('Framework initialization complete.');
+}
+    
 }

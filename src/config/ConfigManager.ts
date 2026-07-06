@@ -2,9 +2,7 @@
 Support, multiple environments, Centralize configuration management */
 
 import { FrameworkConfig } from './FrameworkConfig';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import { EnvironmentLoader } from './EnvironmentLoader';
 
 
 export class ConfigManager {
@@ -12,7 +10,7 @@ export class ConfigManager {
 
     constructor() {
         console.log("ConfigManager constructor executed");
-
+        EnvironmentLoader.load();
         this.configuration = this.loadConfiguration();
         this.validateConfiguration();
 
