@@ -6,6 +6,7 @@ import { EnvironmentLoader } from './EnvironmentLoader';
 import { BrowserConstants } from '../constants/BrowserConstants';
 import { EnvironmentConstants } from '../constants/EnvirnomentConstants';
 import { TimeoutConstants } from '../constants/TimeoutConstants';
+import { FrameworkConstants } from '../constants/FrameworkConstants';
 
 
 export class ConfigManager {
@@ -38,7 +39,7 @@ export class ConfigManager {
 
             headless: false,
 
-            retryCount: 1,
+            retryCount: FrameworkConstants.DEFAULT_RETRY_COUNT,
 
             timeouts: {
                 short: TimeoutConstants.SHORT,
