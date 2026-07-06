@@ -30,24 +30,45 @@ export class ConfigManager {
      *  - GitHub Secrets
      */
     private loadConfiguration(): FrameworkConfig {
-        return {
-            environment: EnvironmentConstants.DEV,
 
-            baseUrl: 'https://opensource-demo.orangehrmlive.com',
+    return {
 
-            browser:BrowserConstants.CHROMIUM,
+        environment:
+            process.env.ENVIRONMENT ||
+            EnvironmentConstants.DEV,
 
-            headless: false,
+        baseUrl:
+            process.env.BASE_URL ||
+            "https://opensource-demo.orangehrmlive.com",
 
-            retryCount: FrameworkConstants.DEFAULT_RETRY_COUNT,
+        browser:
+            (process.env.BROWSER as
+                "chromium" | "firefox" | "webkit") ||
+            BrowserConstants.CHROMIUM,
 
-            timeouts: {
-                short: TimeoutConstants.SHORT,
-                medium: TimeoutConstants.MEDIUM,
-                long: TimeoutConstants.LONG
-            }
-        };
-    }
+        headless:
+            process.env.HEADLESS === "true",
+
+        retryCount:
+            Number(process.env.RETRY_COUNT) ||
+            FrameworkConstants.DEFAULT_RETRY_COUNT,
+
+        timeouts: {
+
+            short:
+                Number(process.env.SHORT_TIMEOUT) ||
+                TimeoutConstants.SHORT,
+
+            medium:
+                Number(process.env.MEDIUM_TIMEOUT) ||
+                TimeoutConstants.MEDIUM,
+
+            long:
+                Number(process.env.LONG_TIMEOUT) ||
+                TimeoutConstants.LONG
+        }
+    };
+}
 
     /**
      * Returns the loaded framework configuration.
